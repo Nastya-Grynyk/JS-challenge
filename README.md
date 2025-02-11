@@ -1,2 +1,2 @@
-# JS-challange
+# JS-challenge
 JS. Basic
