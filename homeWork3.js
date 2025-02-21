@@ -5,11 +5,8 @@ for (var i = 1, j = "*"; i < 6; j += "*") // ініціалізуються дв
     console.log(j);
     i += 1; //і змінюється в середині тіла циклу, а не у блоці оновлення (особливість)
 }
-//console.log(j);
-
 
 //можна ініціалізувати змінні та блок оновлення одразу в середині циклу
-
 for (var i = 1, j = "*"; i <= 5; i++, j += "*")
 {
     console.log(j);
@@ -24,16 +21,18 @@ while (i < 6) { // поки і менше 6,
     i++; //  потім збільшуємо на 1, і перевіряємо ще раз, доки і задовольняє умову
 }
 
+//ДЗ: намалювати прямокутний трикутник із зірочок
+
 // варіант перший з Function Declaration, та циклом for
 function drawTriangle(rows, fill){
-    for (var i = 1, j = fill; i <= rows; i++, j += fill)
+    for (var i = 1, j = fill; i <= rows; i++, j += fill) //краще лет , і і починати з 0
 {
     console.log(j);
 }
 }
-drawTriangle(5, '*')
+drawTriangle(5, '@')
 
-//варіант з Function Expression, та циклом while
+//варіант дрйгий з Function Expression, та циклом while
 var drawTriangle = function (rows, fill) {
     let i = 0;
     let j = fill;
@@ -43,4 +42,5 @@ var drawTriangle = function (rows, fill) {
         i++;
     }
 }
-drawTriangle(6, '+')
+drawTriangle(6, '*')
+
