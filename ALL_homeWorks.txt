@@ -1,0 +1,18 @@
+Домашки до JS
+
+--ДЗ 3. Робота з типами данних
+branch:js_homework1
+files:js3_dataTypes.js
+
+--ДЗ 4. Скільки тобі років ?
+branch:js_homework2
+files:js4_age.js
+
+--ДЗ 5. Конвертер
+branch:js_homework2
+files:js5_converter.js
+
+--ДЗ 6. Робота з циклами
+branch: js_homework3
+files:  js6_drawTriangle.js,
+	js6_func_pow.js
