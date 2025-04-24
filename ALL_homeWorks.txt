@@ -15,4 +15,13 @@ files:js5_converter.js
 --ДЗ 6. Робота з циклами
 branch: js_homework3
 files:  js6_drawTriangle.js,
-	js6_func_pow.js
+	    js6_func_pow.js
+
+--ДЗ 7. Робота з обєктами
+branch: js_homework4
+files:  js7_myObject.js,
+	    js7_poslugy.js
+
+--ДЗ 8. Робота з регулярними виразами
+branch: js_homework5
+files:  js8_regExp.js
