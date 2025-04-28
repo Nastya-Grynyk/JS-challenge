@@ -9,8 +9,9 @@
 
 // спочатку потренуємося писати регулярку і перевіряти методами тест та метч
 
-/* let email = "test.test@gmail.com";
-let regExp = /^([a-zA-Z0-9]+\.?[a-zA-Z0-9]+)@(gmail|yahoo)\.com/;
+/* let email = "andriiandriiandriiandriiandriiandriiandriiandriiandriiandriiandriiandrii@gmail.com";
+let regExp = /^([a-zA-Z0-9]+\.?[a-zA-Z0-9]+)@(gmail|yahoo)\.com$/;
+let regExp = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{1,64}@(gmail|yahoo)\.com$/;
 console.log("Адреса відповідає шаблону? - " + regExp.test(email))
 let matching = email.match(regExp);
 console.log("Збіги в рядку: " + matching) */
@@ -37,7 +38,12 @@ const arr = [
     {
         userName:"Andrii",
         lastName:"",
-        email:"andrii@mail.ru" // Нам такі не підходять
+        email:".andrii@mail.ru" // Нам такі не підходять
+    },
+    {
+        userName:"Denys",
+        lastName:"",
+        email:"rtrden4ik.denen4ik.denen4ik.denen4ik.denen4ik.denen4ik.deniskyawe@gmail.com" // Нам такі не підходять
     },
 ];
 
@@ -45,7 +51,7 @@ const trustedEmails = []; // новий масив, куди будемо зап
 
 arr.forEach(function (item) {
     const email = item.email;
-    const regEmail = /^([a-zA-Z0-9]+\.?[a-zA-Z0-9]+)@(gmail|yahoo)\.com/;
+    const regEmail = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{1,64}@(gmail|yahoo)\.com$/;
     const isMatching = email.match(regEmail);
     const isTrusted = regEmail.test(email)
     console.log("Пошта " + email + " гідна довіри? - " + isTrusted);
@@ -56,3 +62,7 @@ arr.forEach(function (item) {
 });
 console.log(trustedEmails)
 
+//додано:
+//$ - щоб нічого не можна дописати після .com
+// {1,64} обмеження на довжину
+// !#$%&'*+/=?^_`{|}~.- - додані допутимі символи
