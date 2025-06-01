@@ -7,15 +7,6 @@
 - одне, або два слова які, можуть містити (латинські букви, цифри) яке може бути розділене крапкою.
  */
 
-// спочатку потренуємося писати регулярку і перевіряти методами тест та метч
-
-/* let email = "andriiandriiandriiandriiandriiandriiandriiandriiandriiandriiandriiandrii@gmail.com";
-let regExp = /^([a-zA-Z0-9]+\.?[a-zA-Z0-9]+)@(gmail|yahoo)\.com$/;
-let regExp = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{1,64}@(gmail|yahoo)\.com$/;
-console.log("Адреса відповідає шаблону? - " + regExp.test(email))
-let matching = email.match(regExp);
-console.log("Збіги в рядку: " + matching) */
-
 //кроки:
 // визначити якому регулярному виразу має відповідати емейіл
 // проходитися по елементам масиву - по обєктам
@@ -44,14 +35,14 @@ const arr = [
         userName:"Denys",
         lastName:"",
         email:"rtrden4ik.denen4ik.denen4ik.denen4ik.denen4ik.denen4ik.deniskyawe@gmail.com" // Нам такі не підходять
-    },
+    }
 ];
 
 const trustedEmails = []; // новий масив, куди будемо записувати валідні емейли
 
 arr.forEach(function (item) {
     const email = item.email;
-    const regEmail = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{1,64}@(gmail|yahoo)\.com$/;
+    const regEmail = /^(?!.*\.\.)(?!\.)(?!.*\.$)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{1,64}@(gmail|yahoo)\.com$/;
     const isMatching = email.match(regEmail);
     const isTrusted = regEmail.test(email)
     console.log("Пошта " + email + " гідна довіри? - " + isTrusted);
@@ -66,3 +57,4 @@ console.log(trustedEmails)
 //$ - щоб нічого не можна дописати після .com
 // {1,64} обмеження на довжину
 // !#$%&'*+/=?^_`{|}~.- - додані допутимі символи
+// перевріка на дві крапки підряд, початок з крапки, крапка в кінці
